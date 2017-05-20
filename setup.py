@@ -14,13 +14,13 @@ requirements = [
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
+    'pytest~=3.0',
 ]
 
 setup(
     name='pyrules',
     version='0.1.0',
-    description="A Python rules engine inspired by OPS5.",
+    description="A Python rules engine inspired by OPS5",
     long_description=readme + '\n\n' + history,
     author="Christopher Petrilli",
     author_email='petrilli@amber.org',
