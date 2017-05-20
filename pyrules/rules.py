@@ -17,6 +17,9 @@ class Rule(object):
     side (RHS). The conditional test examines the WorkingMemory, and
     decides whether it may need to take an action.  The RuleEngine will
     then execute the action of the Rule that it selects.
+
+    Attributes:
+        _wm (WorkingMemory): A proxy object to the working memory
     """
     __name__ = "Name of the Rule"
 
@@ -29,7 +32,7 @@ class Rule(object):
         Args:
             working_memory (WorkingMemory): In-flight work for this Rule
         """
-        self.__wm = proxy(working_memory)
+        self._wm = proxy(working_memory)
         super(Rule, self).__init__()
 
 
@@ -42,7 +45,7 @@ class Rule(object):
         Returns:
             bool: True if action should be taken, False otherwise
         """
-        raise NotImplemented
+        raise NotImplementedError()
 
     def action(self):
         """Take action on the working memory.
@@ -51,4 +54,9 @@ class Rule(object):
             bool: True if action succeeded and rule should be kept in, False
                 if the rule should be removed from consideration.
         """
-        raise NotImplemented
+        raise NotImplementedError()
+
+    def __str__(self):
+        return "<Rule: {name} at {id:#x}>".format(
+            name=self.__name__,
+            id=id(self))

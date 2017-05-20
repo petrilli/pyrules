@@ -9,32 +9,22 @@ list of associated attributes and their values. The class name classifies
 the object according to the type of information it contains. The attributes
 and their values describe the object's characteristics. (In database terms,
 object classes are like tables and attributes are like fields).
-
-This is structured slightly differently as it leverages the attrs package
-to provide a more transparent way to store data through attribute access.
 """
-from copy import copy
+from bunch import Bunch
 
 
-class WorkingMemory(object):
+class Memory(Bunch):
+    pass
+
+
+class WorkingMemory(Memory):
     """Working memory is the placeholder for all things.
 
     When initialized, it makes a copy of any provided ruleset and keeps its
     own copy.
-
-    Attributes:
-        _rules (list): List of rules we are going to be working
-            with. This is done through a copy when initialized so we don't
-            end up having to deal with rules being modified on the fly.
-
-
     """
-    def __init__(self, rules):
+    def __init__(self):
         """Initialize the working memory for a run.
 
-        Args:
-            rules (List[Rule]): all of the Rule objects to deal with
         """
-        # Make a copy so we don't have to deal with potentially mutable
-        # rule sets.
-        self._rules = copy(rules)
+        super(WorkingMemory, self).__init__()
