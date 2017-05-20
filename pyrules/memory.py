@@ -23,7 +23,7 @@ class WorkingMemory(object):
     own copy.
 
     Attributes:
-        __rules (list): List of rules we are going to be working
+        _rules (list): List of rules we are going to be working
             with. This is done through a copy when initialized so we don't
             end up having to deal with rules being modified on the fly.
 
@@ -37,4 +37,4 @@ class WorkingMemory(object):
         """
         # Make a copy so we don't have to deal with potentially mutable
         # rule sets.
-        self.__rules = copy(rules)
+        self._rules = copy(rules)
