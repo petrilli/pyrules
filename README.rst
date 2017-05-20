@@ -9,10 +9,6 @@ pyrules
 .. image:: https://img.shields.io/travis/petrilli/pyrules.svg
         :target: https://travis-ci.org/petrilli/pyrules
 
-.. image:: https://readthedocs.org/projects/pyrules/badge/?version=latest
-        :target: https://pyrules.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
 .. image:: https://pyup.io/repos/github/petrilli/pyrules/shield.svg
      :target: https://pyup.io/repos/github/petrilli/pyrules/
      :alt: Updates
