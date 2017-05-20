@@ -28,7 +28,21 @@ It uses a simple conflict resolution model, and opportunistic matching by the ru
 Features
 --------
 
-* TODO
+* Uses a simple recognize-act cycle.
+
+
+Recognize-Act Cycle
+-------------------
+
+The recognize-act cycle is the pattern-matching procedure that takes place repeatedly as a ruleset program executes.
+The design is based on the idea that once working memory is populated, the rules are run until none match any more, or an iteration limit is reached.
+The cycle consists of the following steps:
+
+1. Match: Iterate through each rule, allowing it to search working memory and decide if it has something to offer.
+   This places all instantiations in a list called the conflict set.
+2. Select: Using an ordered sequence of criteria, specifically combining refraction, declarative ordering, and optional arbitrary choice, take the instantiation with the highest priority out of the conflict set.
+   If the conflict set is empty (because no rule condition has been satisfied), the cycle stops.
+3. Act: Execute the actions of the rule in the selected working memory.
 
 
 Installation
