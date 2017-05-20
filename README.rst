@@ -23,7 +23,6 @@ It uses a simple conflict resolution model, and opportunistic matching by the ru
 
 
 * Free software: BSD license
-* Documentation: https://pyrules.readthedocs.io.
 
 
 Features
